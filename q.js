@@ -522,9 +522,8 @@ array_reduce(
         "isResolved", "isFulfilled", "isRejected",
         "dispatch",
         "spread",
-        "get", "put", "set", "del", "delete",
+        "get", "set", "del", "delete",
         "post", "send",
-        "invoke", // XXX deprecated
         "keys",
         "fapply", "fcall", "fbind",
         "all", "allResolved",
@@ -532,8 +531,10 @@ array_reduce(
         "catch", "finally", "fail", "fin", "progress", "done",
         "nfcall", "nfapply", "nfbind",
         "npost", "nsend",
+        "nodeify",
         "ninvoke", // XXX deprecated
-        "nodeify"
+        "invoke", // XXX deprecated
+        "put" // XXX deprecated
     ],
     function (undefined, name) {
         makePromise.prototype[name] = function () {
@@ -998,8 +999,8 @@ Q.get = dispatcher("get");
  * @param value     new value of property
  * @return promise for the return value
  */
-Q.put = // XXX deprecated
 Q.set = dispatcher("set");
+Q.put = deprecate(Q.set, "put", "set");
 
 /**
  * Deletes a property in a future turn.

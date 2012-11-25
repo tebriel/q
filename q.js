@@ -702,7 +702,7 @@ function fulfill(object) {
  * coerces promises from different systems.
  * @param value immediate reference or promise
  */
-Q.resolve = resolve;
+Q.resolve = deprecate(resolve, "Q.resolve", "Q");
 function resolve(value) {
     // If the object is already a Promise, return it directly.  This enables
     // the resolve function to both be used to created references from objects,

@@ -67,6 +67,10 @@ Their replacements are listed here:
          <td><code>nodeify</code></td>
       </tr>
       <tr>
+         <td><code>Q.resolve</code></td>
+         <td><code>Q</code></td>
+      </tr>
+      <tr>
          <td><code>deferred.node</code></td>
          <td><code>deferred.makeNodeResolver</code></td>
       </tr>

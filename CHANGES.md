@@ -90,16 +90,16 @@ Their replacements are listed here:
 </table>
 
 (*) Use of ``thisp`` is discouraged. For calling methods, use ``post`` or
-``invoke``.
+``send``.
 
--   Q now exports a `Q(value)` function, an alias for `resolve`.
-    `Q.call`, `Q.apply`, and `Q.bind` were removed to make room for the
-    same methods on the function prototype.  This aligns with the
+-   Q now exports a `Q(value)` function, an alias for the now-deprecated
+    `resolve`. `Q.call`, `Q.apply`, and `Q.bind` were removed to make room for
+    the same methods on the function prototype.  This aligns with the
     concurrency strawman.
 -   `invoke` has been renamed `send` in all its forms.  The old methods
     are deprecated.  This aligns with the concurrency strawman.
 -   `Q.fulfill` has been added.  It is distinct from `Q.resolve` in that
-    it does not pass promises through, nor coerces promises from other
+    it does not resolve promises, nor coerces promises from other
     systems.  The promise becomes the fulfillment value.
 -   `Q.put` has been renamed `Q.set`.
 -   The internal interface for a promise now uses

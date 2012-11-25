@@ -828,7 +828,22 @@ function when(value, fulfilled, rejected, progressed) {
     resolvedValue.promiseDispatch(void 0, "when", [
         void 0,
         function (value) {
-            deferred.notify(_progressed(value));
+            var newValue;
+            var threw = false;
+            try {
+                newValue = _progressed(value);
+            } catch (e) {
+                threw = true;
+                if (Q.onerror) {
+                    Q.onerror(e);
+                } else {
+                    throw e;
+                }
+            }
+
+            if (!threw) {
+                deferred.notify(newValue);
+            }
         }
     ]);
 

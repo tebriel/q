@@ -71,6 +71,10 @@ Their replacements are listed here:
          <td><code>deferred.makeNodeResolver</code></td>
       </tr>
       <tr>
+         <td><code>promise.when</code></td>
+         <td><code>promise.then</code></td>
+      </tr>
+      <tr>
          <td><code>Method</code>, <code>sender</code></td>
          <td><code>dispatcher</code></td>
       </tr>

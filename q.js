@@ -521,7 +521,7 @@ array_reduce(
     [
         "isResolved", "isFulfilled", "isRejected",
         "dispatch",
-        "when", "spread",
+        "spread",
         "get", "put", "set", "del", "delete",
         "post", "send",
         "invoke", // XXX deprecated
@@ -545,6 +545,10 @@ array_reduce(
     },
     void 0
 );
+
+makePromise.prototype.when = deprecate(function () {
+    return Q.when.apply(Q, [this].concat(array_slice(arguments)));
+}, "when", "then");
 
 makePromise.prototype.toSource = function () {
     return this.toString();

@@ -529,12 +529,11 @@ array_reduce(
         "fapply", "fcall", "fbind",
         "all", "allResolved",
         "timeout", "delay",
-        "catch", "finally", "fail", "fin", "progress", "end", "done",
+        "catch", "finally", "fail", "fin", "progress", "done",
         "nfcall", "nfapply", "nfbind",
-        "ncall", "napply", "nbind",
         "npost", "nsend",
         "ninvoke", // XXX deprecated
-        "nend", "nodeify"
+        "nodeify"
     ],
     function (undefined, name) {
         makePromise.prototype[name] = function () {

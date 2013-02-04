@@ -1874,6 +1874,7 @@ if (typeof require === "function") {
                function (done) {
                 var error = new Error("should be caught by the domain");
 
+                debugger;
                 d.run(function () {
                     Q.resolve().then(function () {
                         setTimeout(function () {
